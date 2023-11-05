@@ -1,0 +1,58 @@
+{{ 'section-key-ingredient.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width key-ingredient">
+  <div class="key-ingredient__wrapper">
+    {% if section.settings.title != blank %}
+      <h2 class="key-ingredient__title">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="metaobjects">
+      {%- if product.metafields.custom.product_ingredient.value != blank -%}
+        {% for meta in product.metafields.custom.product_ingredient.value %}
+          {% if meta.enable == true %}
+            <div class="metaobjects_list" data-id="projectId--{{fooloop.index}}">
+              <img class="list-image" src="{{ meta.image | img_url: 'master' }}" alt="{{meta.image.alt}}">
+              <h3 class="list-title">{{ meta.name }}</h3>
+              {{ meta.brief_descripition | metafield_tag }}
+              <a href="javascript:;" class="learn_more">learn more</a>
+              <div class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="image-with-content">
+                    <div class="iwt-image">
+                      <img src="{{ meta.image | img_url: 'master' }}" alt="{{meta.image.alt}}">
+                    </div>
+                    <div class="iwt-content">
+                      <h3 class="iwt-content_title">{{ meta.name }}</h3>
+                      {{ meta.other_info | metafield_tag }}
+                    </div>
+                  </div>
+                  {{ meta.main_description | metafield_tag }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{{ 'section-key-ingredient.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Key Ingredients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Key Ingredients"
+    }
+  ]
+}
+{% endschema %}

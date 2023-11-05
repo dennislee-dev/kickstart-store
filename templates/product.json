@@ -76,6 +76,12 @@
         "padding_bottom": 12
       }
     },
+    "82adf11b-11fe-453f-a71a-457d5e560cb4": {
+      "type": "key-ingredient",
+      "settings": {
+        "title": "KEY INGREDIENTS"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -97,6 +103,7 @@
   },
   "order": [
     "main",
+    "82adf11b-11fe-453f-a71a-457d5e560cb4",
     "related-products"
   ]
 }
