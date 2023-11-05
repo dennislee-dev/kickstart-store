@@ -8,6 +8,39 @@
         "color_scheme": "background-1"
       }
     },
+    "5dae4174-0168-4f4b-ad29-c6447bf67de7": {
+      "type": "collection-tabs",
+      "blocks": {
+        "3ac9701b-2839-4a11-9f6d-5b75ce7f3560": {
+          "type": "collection",
+          "settings": {
+            "title": "All",
+            "collection": "frontpage"
+          }
+        },
+        "1523b811-d954-43e8-ab9c-171a7cad0cdb": {
+          "type": "collection",
+          "settings": {
+            "title": "Accessories",
+            "collection": "accessories"
+          }
+        },
+        "83d23d76-58e4-483a-b0d4-7ec05c19bdf6": {
+          "type": "collection",
+          "settings": {
+            "title": "BEST SELLERS",
+            "collection": "best-sellers"
+          }
+        }
+      },
+      "block_order": [
+        "3ac9701b-2839-4a11-9f6d-5b75ce7f3560",
+        "1523b811-d954-43e8-ab9c-171a7cad0cdb",
+        "83d23d76-58e4-483a-b0d4-7ec05c19bdf6"
+      ],
+      "settings": {
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -31,6 +64,7 @@
   },
   "order": [
     "banner",
+    "5dae4174-0168-4f4b-ad29-c6447bf67de7",
     "product-grid"
   ]
 }

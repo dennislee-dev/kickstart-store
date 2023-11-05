@@ -1,0 +1,27 @@
+.collection-tabs__desktop {
+    display: flex;
+    gap: 24px;
+}
+
+.collection-tabs__tab {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.collection-hero__title {
+    text-transform: uppercase;
+}
+
+.collection-tabs__mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .collection-tabs__mobile {
+        display: flex;
+    }
+
+    .collection-tabs__desktop {
+        display: none;
+    }
+}

@@ -1,0 +1,70 @@
+{{ 'section-collection-tabs.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width collection-tabs">
+  <div class="collection-tabs__desktop">
+    {% for block in section.blocks %}
+      {% if block.type == 'collection' %}
+        {% if block.settings.collection != blank %}
+          {%- liquid
+            assign title = block.settings.collection.title
+            if block.settings.title != blank
+              assign title = block.settings.title
+            endif
+          -%}
+          <p class="collection-tabs__tab" data-title="{{ title | handleize }}" data-handle="{{block.settings.collection.handle | json | handleize}}">
+            {{ title }}
+          </p>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <select class="collection-tabs__mobile">
+    {% for block in section.blocks %}
+      {% if block.type == 'collection' %}
+        {% if block.settings.collection != blank %}
+          {%- liquid
+            assign title = block.settings.collection.title
+            if block.settings.title != blank
+              assign title = block.settings.title
+            endif
+          -%}
+          <option class="collection-tabs__tab-mobile" value="{{block.settings.collection.handle | json | handleize}}">
+            {{ title }}
+          </option>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </select>
+</div>
+
+{{ 'section-collection-tabs.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Collection Tabs",
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tabs"
+    }
+  ]
+}
+{% endschema %}
